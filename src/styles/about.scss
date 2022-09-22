@@ -1,0 +1,97 @@
+@import "_vars.scss";
+@import "_mixins.scss";
+
+.about {
+  background-color: $black;
+  padding-top: 30px;
+  padding-bottom: 69px;
+  @media (max-width: 1336px) {
+    padding-top: 31px;
+    padding-bottom: 81px;
+  }
+  @media (max-width: 768px) {
+    padding-bottom: 33px;
+  }
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+    @media (max-width: 1336px) {
+      gap: 24px;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 31px;
+    color: $white;
+    margin-bottom: 5px;
+  }
+
+  &__info {
+    @extend %text-size;
+    line-height: 28px;
+    color: $gray;
+    max-width: 630px;
+    letter-spacing: -0.1px;
+    @media (max-width: 1336px) {
+      max-width: 466px;
+    }
+    @media (max-width: 768px) {
+      max-width: 342px;
+    }
+  }
+
+  &__right {
+    padding-top: 33px;
+  }
+
+  &__camera {
+    img {
+      display: block;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 40;
+    font-size: 24px;
+    line-height: 22px;
+    color: $white;
+    margin-bottom: 16px;
+  }
+
+  &__email {
+    border: none;
+    background-color: #4A4A4A;
+    padding: 15px 23px;
+    color: $gray;
+    margin-right: 26px;
+    width: 472px;
+    &:focus-visible {
+      outline: 1px solid $orange;
+    }
+    @media (max-width: 1336px) {
+      margin-bottom: 20px;
+      width: 342px;
+    }
+  }
+
+  &__button {
+    @extend %btn-reset;
+    @include button($orange, none, 15.5px 22px);
+    transition: background-color .2s;
+    &:hover {
+      background-color: $brown;
+    }
+    &:focus-visible {
+      background-color: $orange;
+      outline: 3px solid $brown;
+    }
+    &:active {
+      outline: none;
+      background-color: $darkOrange;
+    }
+  }
+}

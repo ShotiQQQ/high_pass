@@ -1,0 +1,45 @@
+%list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+%btn-reset {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+%text-size {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+%roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+@mixin absolute($positionTop, $positionRight) {
+  position: absolute;
+  top: $positionTop;
+  right: $positionRight;
+  padding: 7px 14px;
+  background-color: $black;
+  color: $white;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  @extend %roboto;
+}
+
+@mixin button($background, $border, $padding) {
+  padding: $padding;
+  background-color: $background;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: $white;
+  border: $border;
+  @extend %roboto;
+}

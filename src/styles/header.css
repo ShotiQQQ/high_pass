@@ -1,0 +1,127 @@
+.header__menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.header__search {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.header__menu {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.header {
+  background-color: #202020;
+}
+.header__container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  padding: 26px 0 24px 0;
+  column-gap: 30px;
+}
+@media (max-width: 1024px) {
+  .header__container {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .header__container {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 32px;
+    padding-bottom: 9px;
+  }
+}
+.header__logo {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.header__logo-image img {
+  display: block;
+}
+.header__menu {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  line-height: 21px;
+  justify-self: end;
+  grid-column-start: 4;
+  grid-column-end: 11;
+}
+@media (max-width: 1024px) {
+  .header__menu {
+    grid-column-start: 3;
+    grid-column-end: 8;
+    justify-self: start;
+  }
+}
+@media (max-width: 768px) {
+  .header__menu {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 7;
+  }
+}
+.header__items:not(:last-child) {
+  margin-right: 78px;
+}
+@media (max-width: 1332px) {
+  .header__items:not(:last-child) {
+    margin-right: 55px;
+  }
+}
+@media (max-width: 1042px) {
+  .header__items:not(:last-child) {
+    margin-right: 33px;
+  }
+}
+@media (max-width: 768px) {
+  .header__items:not(:last-child) {
+    margin-right: 71px;
+  }
+}
+.header__items-link {
+  transition: color 0.2s, background-color 0.2s;
+}
+.header__items-link:hover {
+  color: #FF6E30;
+}
+.header__items-link:focus-visible {
+  color: #fff;
+  background-color: #BC572B;
+}
+.header__items-link:active {
+  color: #CE4307;
+}
+.header__search {
+  justify-self: end;
+  grid-column-start: 12;
+}
+.header__search svg path {
+  transition: fill 0.2s;
+}
+.header__search:hover svg path {
+  fill: #FF6E30;
+}
+.header__search:focus-visible svg path {
+  fill: #BC572B;
+}
+.header__search:active svg path {
+  fill: #CE4307;
+}
+@media (max-width: 1024px) {
+  .header__search {
+    grid-column-start: 8;
+  }
+}
+@media (max-width: 768px) {
+  .header__search {
+    grid-column-start: 6;
+  }
+}

@@ -1,0 +1,164 @@
+@import "_vars.scss";
+@import "_mixins.scss";
+
+.contacts {
+  padding-bottom: 68px;
+  @media (max-width: 1024px) {
+    padding-bottom: 66px;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 31px;
+    margin-bottom: 24px;
+    color: $black;
+  }
+  &__content {
+    display: flex;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+  &__map {
+    position: relative;
+    margin-right: 30px;
+    @media (max-width: 1024px) {
+      margin-right: 25px;
+    }
+    @media (max-width: 768px) {
+      margin-right: 0;
+      margin-bottom: 24px;
+      width: 100% !important;
+    }
+  }
+  [class*="ground-pane"] {
+    filter: grayscale(1);
+  }
+  &__data {
+    display: flex;
+    opacity: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 440px;
+    bottom: 0;
+    left: 0;
+    background: #202020D9;
+    z-index: 0;
+    padding: 175px 50px 150px 60px;
+    transition: z-index .2s, opacity .2s;
+    .contacts__subtitle {
+      color: $white;
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+    @media (max-width: 1230px) {
+      top: 303px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 25px 30px 21px 30px;
+    }
+  }
+  &__data-visibility {
+    z-index: 1;
+    opacity: 1;
+  }
+  &__adress {
+    @extend %roboto;
+    @extend %text-size;
+    line-height: 28px;
+    color: #cacaca;
+    margin-bottom: 3px;
+    @media (max-width: 1230px) {
+      max-width: 293px;
+    }
+  }
+  &__number {
+    @extend %text-size;
+    line-height: 21px;
+    background-image: url("../images/call.svg");
+    background-position: center left;
+    background-repeat: no-repeat;
+    background-size: 22px 22px;
+    padding-left: 22px;
+    color: $orange;
+  }
+  &__close {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top: 20px;
+    right: 20px;
+    @extend %btn-reset;
+    background-image: url("../images/close.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 410px;
+    @media (max-width: 1024px) {
+      max-width: 347px;
+    }
+    @media (max-width: 768px) {
+      max-width: 466px;
+    }
+  }
+  &__subtitle {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 22px;
+    color: $black;
+    margin-bottom: 5px;
+    margin-top: -6px;
+    @media (max-width: 1024px) {
+      margin-top: -9px;
+    }
+  }
+  &__descr {
+    @extend %roboto;
+    @extend %text-size;
+    line-height: 22px;
+    color: #999;
+    margin-bottom: 14px;
+  }
+  &__input {
+    @extend %roboto;
+    @extend %text-size;
+    line-height: 19px;
+    background-color: #E9E9E9;
+    border: none;
+    resize: none;
+    padding: 15px 23px;
+    width: 100%;
+    margin-bottom: 20px;
+    &:focus-visible {
+      outline: 1px solid $orange;
+    }
+  }
+  &__comment {
+    height: 100%;
+  }
+  &__button {
+    @extend %btn-reset;
+    @include button($orange, none, 15.5px 22px);
+    transition: background-color .2s;
+    &:hover {
+      background-color: $brown;
+    }
+    &:focus-visible {
+      background-color: $orange;
+      outline: 3px solid $brown;
+    }
+    &:active {
+      outline: none;
+      background-color: $darkOrange;
+    }
+  }
+}

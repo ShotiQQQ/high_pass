@@ -1,0 +1,171 @@
+@import "_vars.scss";
+@import "_mixins.scss";
+
+.projects {
+  &__container {
+    padding-top: 68px;
+    padding-bottom: 69px;
+    @media (max-width: 1024px) {
+      padding-bottom: 76px;
+    }
+  }
+  &__content {
+    display: grid;
+    gap: 30px;
+    column-gap: 30px;
+    row-gap: 33px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+    "first first second second third third fourth fourth fourth fourth fourth fourth"
+    "fifth fifth fifth fifth fifth fifth six six six seven seven seven"
+    ;
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      row-gap: 24px;
+      column-gap: 30px;
+      grid-template-areas:
+      "first first second second third third third third"
+      "fourth fourth fourth fourth fourth six six six"
+      "seven seven seven fifth fifth fifth fifth fifth"
+    ;
+    }
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      row-gap: 24px;
+      grid-template-areas:
+      "first first second second third third"
+      "fourth fourth fourth fourth fourth fourth"
+      "six six six seven seven seven"
+      "fifth fifth fifth fifth fifth fifth"
+    ;
+    }
+  }
+  &__card--1 {
+    grid-area: first;
+  }
+  &__card--2 {
+    grid-area: second;
+  }
+  &__card--3 {
+    grid-area: third;
+  }
+  &__card--4 {
+    grid-area: fourth;
+  }
+  &__card--5 {
+    grid-area: fifth;
+  }
+  &__card--6 {
+    grid-area: six;
+  }
+  &__card--7 {
+    grid-area: seven;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 31px;
+    color: $black;
+    margin-bottom: 12px;
+  }
+  &__card {
+    color: $white;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    position: relative;
+  }
+  &__image {
+    img {
+      display: block;
+      margin-bottom: 18px;
+    }
+  }
+  &__descr {
+    @extend %roboto;
+    @extend %text-size;
+    line-height: 22px;
+    color: $black;
+    margin-bottom: 13px;
+  }
+  &__date {
+    @extend %roboto;
+    font-weight: 400;
+    font-size: 12px;
+    color: #999;
+    background-image: url("../images/calendar-gray.svg");
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    background-position: top left;
+    padding-left: 18px;
+  }
+  .tag {
+    @extend %roboto;
+    @include absolute(6px, 7px);
+  }
+  &__button {
+    @extend %btn-reset;
+    @extend %roboto;
+    @include button(transparent, 3px solid $orange, 11px 19px);
+    color: $white;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    margin-top: auto;
+    transition: background-color .2s, border .2s;
+    &:hover {
+      background-color: $orange;
+    }
+    &:focus-visible {
+      background-color: $brown;
+    }
+    &:active {
+      outline: none;
+      border: 3px solid $darkOrange;
+      background-color: $darkOrange;
+    }
+  }
+  &__card-background {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 23px 30px 28px;
+    @media (max-width: 1024px) {
+      padding-top: 31px;
+    }
+    .projects__date {
+      background-image: url("../images/calendar-white.svg");
+      background-position: center left;
+      color: $white;
+      line-height: 22px;
+      margin-bottom: 2px;
+    }
+    .projects__descr {
+      @extend %text-size;
+      color: $white;
+      line-height: 22px;
+      max-width: 292px;
+    }
+  }
+  &__card-background--1 {
+    background-image: url("../images/projects_fuji.jpg");
+  }
+  &__card-background--2 {
+    background-image: url("../images/projects_oblivion.jpg");
+  }
+  &__subtitle {
+    max-width: 293px;
+    color: $white;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    margin-bottom: 6px;
+  }
+
+}

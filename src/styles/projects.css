@@ -1,0 +1,182 @@
+.projects__button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.projects__card-background .projects__descr, .projects__descr {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.projects__button, .projects .tag, .projects__date, .projects__descr {
+  font-family: "Roboto", sans-serif;
+}
+
+.projects__container {
+  padding-top: 68px;
+  padding-bottom: 69px;
+}
+@media (max-width: 1024px) {
+  .projects__container {
+    padding-bottom: 76px;
+  }
+}
+.projects__content {
+  display: grid;
+  gap: 30px;
+  column-gap: 30px;
+  row-gap: 33px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: "first first second second third third fourth fourth fourth fourth fourth fourth" "fifth fifth fifth fifth fifth fifth six six six seven seven seven";
+}
+@media (max-width: 1024px) {
+  .projects__content {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 24px;
+    column-gap: 30px;
+    grid-template-areas: "first first second second third third third third" "fourth fourth fourth fourth fourth six six six" "seven seven seven fifth fifth fifth fifth fifth";
+  }
+}
+@media (max-width: 768px) {
+  .projects__content {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    row-gap: 24px;
+    grid-template-areas: "first first second second third third" "fourth fourth fourth fourth fourth fourth" "six six six seven seven seven" "fifth fifth fifth fifth fifth fifth";
+  }
+}
+.projects__card--1 {
+  grid-area: first;
+}
+.projects__card--2 {
+  grid-area: second;
+}
+.projects__card--3 {
+  grid-area: third;
+}
+.projects__card--4 {
+  grid-area: fourth;
+}
+.projects__card--5 {
+  grid-area: fifth;
+}
+.projects__card--6 {
+  grid-area: six;
+}
+.projects__card--7 {
+  grid-area: seven;
+}
+.projects__title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 31px;
+  color: #202020;
+  margin-bottom: 12px;
+}
+.projects__card {
+  color: #fff;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  position: relative;
+}
+.projects__image img {
+  display: block;
+  margin-bottom: 18px;
+}
+.projects__descr {
+  line-height: 22px;
+  color: #202020;
+  margin-bottom: 13px;
+}
+.projects__date {
+  font-weight: 400;
+  font-size: 12px;
+  color: #999;
+  background-image: url("../images/calendar-gray.svg");
+  background-repeat: no-repeat;
+  background-size: 14px 14px;
+  background-position: top left;
+  padding-left: 18px;
+}
+.projects .tag {
+  position: absolute;
+  top: 6px;
+  right: 7px;
+  padding: 7px 14px;
+  background-color: #202020;
+  color: #fff;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}
+.projects__button {
+  padding: 11px 19px;
+  background-color: transparent;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #fff;
+  border: 3px solid #FF6E30;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  margin-top: auto;
+  transition: background-color 0.2s, border 0.2s;
+}
+.projects__button:hover {
+  background-color: #FF6E30;
+}
+.projects__button:focus-visible {
+  background-color: #BC572B;
+}
+.projects__button:active {
+  outline: none;
+  border: 3px solid #CE4307;
+  background-color: #CE4307;
+}
+.projects__card-background {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 23px 30px 28px;
+}
+@media (max-width: 1024px) {
+  .projects__card-background {
+    padding-top: 31px;
+  }
+}
+.projects__card-background .projects__date {
+  background-image: url("../images/calendar-white.svg");
+  background-position: center left;
+  color: #fff;
+  line-height: 22px;
+  margin-bottom: 2px;
+}
+.projects__card-background .projects__descr {
+  color: #fff;
+  line-height: 22px;
+  max-width: 292px;
+}
+.projects__card-background--1 {
+  background-image: url("../images/projects_fuji.jpg");
+}
+.projects__card-background--2 {
+  background-image: url("../images/projects_oblivion.jpg");
+}
+.projects__subtitle {
+  max-width: 293px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+  margin-bottom: 6px;
+}

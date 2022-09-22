@@ -1,0 +1,117 @@
+.about__button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.about__info {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.about__button {
+  font-family: "Roboto", sans-serif;
+}
+
+.about {
+  background-color: #202020;
+  padding-top: 30px;
+  padding-bottom: 69px;
+}
+@media (max-width: 1336px) {
+  .about {
+    padding-top: 31px;
+    padding-bottom: 81px;
+  }
+}
+@media (max-width: 768px) {
+  .about {
+    padding-bottom: 33px;
+  }
+}
+.about__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 30px;
+}
+@media (max-width: 1336px) {
+  .about__container {
+    gap: 24px;
+  }
+}
+.about__title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 31px;
+  color: #fff;
+  margin-bottom: 5px;
+}
+.about__info {
+  line-height: 28px;
+  color: #CACACA;
+  max-width: 630px;
+  letter-spacing: -0.1px;
+}
+@media (max-width: 1336px) {
+  .about__info {
+    max-width: 466px;
+  }
+}
+@media (max-width: 768px) {
+  .about__info {
+    max-width: 342px;
+  }
+}
+.about__right {
+  padding-top: 33px;
+}
+.about__camera img {
+  display: block;
+  margin-bottom: 25px;
+}
+.about__subtitle {
+  font-weight: 40;
+  font-size: 24px;
+  line-height: 22px;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.about__email {
+  border: none;
+  background-color: #4A4A4A;
+  padding: 15px 23px;
+  color: #CACACA;
+  margin-right: 26px;
+  width: 472px;
+}
+.about__email:focus-visible {
+  outline: 1px solid #FF6E30;
+}
+@media (max-width: 1336px) {
+  .about__email {
+    margin-bottom: 20px;
+    width: 342px;
+  }
+}
+.about__button {
+  padding: 15.5px 22px;
+  background-color: #FF6E30;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #fff;
+  border: none;
+  transition: background-color 0.2s;
+}
+.about__button:hover {
+  background-color: #BC572B;
+}
+.about__button:focus-visible {
+  background-color: #FF6E30;
+  outline: 3px solid #BC572B;
+}
+.about__button:active {
+  outline: none;
+  background-color: #CE4307;
+}

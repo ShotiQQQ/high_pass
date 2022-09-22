@@ -1,0 +1,132 @@
+@import "_vars.scss";
+@import "_mixins.scss";
+
+.hero {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+    padding-top: 41px;
+    padding-bottom: 68px;
+    @media (max-width: 1024px) {
+      padding-top: 35px;
+      column-gap: 25px;
+    }
+    @media (max-width: 768px) {
+      column-gap: 30px;
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    position: relative;
+    background-image: url("images/photoset.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 60px;
+    @media (max-width: 1024px) {
+      background-image: url("images/photoset-1024.jpg");
+      padding: 30px;
+    }
+  }
+
+  &__name {
+    @extend %roboto;
+    @extend %text-size;
+    color: $white;
+    line-height: 19px;
+    margin-bottom: 3px;
+    @media (max-width: 1024px) {
+      margin-bottom: 9px;
+    }
+    @media (max-width: 768px) {
+      margin-bottom: 14px;
+    }
+  }
+
+  &__title {
+    max-width: 429px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 37px;
+    color: $white;
+    margin-bottom: 19px;
+    @media (max-width: 1024px) {
+      font-size: 34px;
+      line-height: 34px;
+      margin-bottom: 22px;
+    }
+    @media (max-width: 768px) {
+      line-height: 31px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 25px;
+    color: $black;
+    margin-bottom: 18px;
+    @media (max-width: 1024px) {
+      margin-bottom: 24px;
+    }
+    @media (max-width: 768px) {
+      margin-bottom: 17px;
+      font-size: 22px;
+      line-height: 23px;
+    }
+  }
+
+  &__button {
+    @extend %btn-reset;
+    @include button($orange, none, 15.5px 22px);
+    transition: background-color .2s;
+    &:hover {
+      background-color: $brown;
+    }
+    &:focus-visible {
+      background-color: $orange;
+      outline: 3px solid $brown;
+    }
+    &:active {
+      outline: none;
+      background-color: $darkOrange;
+    }
+  }
+
+  .tag {
+    @include absolute(15px, 16px)
+  }
+
+  &__girls {
+    display: grid;
+    gap: 30px;
+  }
+  &__imgs {
+    img {
+      display: block;
+    }
+    &-girl1 {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    &-girl2 {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+
+    &-girl3 {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+  }
+}

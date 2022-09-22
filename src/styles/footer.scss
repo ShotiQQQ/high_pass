@@ -1,0 +1,92 @@
+@import "_vars.scss";
+@import "_mixins.scss";
+
+.footer {
+  background-color: $black;
+    padding-top: 24px;
+    padding-bottom: 16px;
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 30px;
+    grid-template-areas:
+    "logo logo logo logo quote quote quote quote quote quote social social";
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-areas:
+      "logo logo logo quote quote quote social social";
+    }
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-areas:
+      "logo logo logo quote social social";
+    }
+  }
+  &__logo {
+    grid-area: logo;
+    max-width: 263px;
+    max-height: 55px;
+    @media (max-width: 1024px) {
+      align-self: center;
+    }
+  }
+  &__quote {
+    grid-area: quote;
+    @extend %roboto;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: $gray;
+    max-width: 361px;
+    align-items: start;
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  &__social {
+    grid-area: social;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $gray;
+    @extend %roboto;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 161px;
+    margin-left: auto;
+    span {
+      margin-bottom: 8px;
+    }
+  }
+  &__list {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  &__icons:not(:last-child) {
+    margin-right: 20px;
+  }
+  &__link {
+    svg path {
+      transition: fill .2s;
+    }
+    &:hover {
+      svg path {
+        fill: $orange;
+      }
+    }
+    &:focus-visible {
+      svg path {
+        fill: $brown;
+      }
+    }
+    &:active {
+      svg path {
+        fill: $darkOrange;
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+@import "_vars.scss";
+@import "_mixins.scss";
+
+.header {
+  background-color: $black;
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    padding: 26px 0 24px 0;
+    column-gap: 30px;
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(8, 1fr);
+    }
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      row-gap: 32px;
+      padding-bottom: 9px;
+    }
+  }
+  &__logo {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    &-image {
+      img {
+        display: block;
+      }
+    }
+  }
+  &__menu {
+    @extend %list-reset;
+    display: flex;
+    align-items: center;
+    color: $white;
+    @extend %text-size;
+    line-height: 21px;
+    justify-self: end;
+    grid-column-start: 4;
+    grid-column-end: 11;
+    @media (max-width: 1024px) {
+      grid-column-start: 3;
+      grid-column-end: 8;
+      justify-self: start;
+    }
+    @media (max-width: 768px) {
+      grid-row-start: 2;
+      grid-column-start: 1;
+      grid-column-end: 7;
+    }
+  }
+  &__items:not(:last-child) {
+    margin-right: 78px;
+    @media (max-width: 1332px) {
+      margin-right: 55px;
+    }
+    @media (max-width: 1042px) {
+      margin-right: 33px;
+    }
+    @media (max-width: 768px) {
+      margin-right: 71px;
+    }
+  }
+  &__items-link {
+    transition: color .2s, background-color .2s;
+    &:hover {
+      color: $orange;
+    }
+    &:focus-visible {
+      color: $white;
+      background-color: $brown;
+    }
+    &:active {
+      color: $darkOrange;
+    }
+  }
+  &__search {
+    @extend %btn-reset;
+    justify-self: end;
+    grid-column-start: 12;
+    svg path {
+      transition: fill .2s;
+    }
+    &:hover {
+      svg path {
+        fill: $orange;
+      }
+    }
+    &:focus-visible {
+      svg path {
+        fill: $brown;
+      }
+    }
+    &:active {
+      svg path {
+        fill: $darkOrange;
+      }
+    }
+    @media (max-width: 1024px) {
+      grid-column-start: 8;
+    }
+    @media (max-width: 768px) {
+      grid-column-start: 6;
+    }
+  }
+}
+
