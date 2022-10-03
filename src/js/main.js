@@ -1,4 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const burger = document.querySelector('.header__burger');
+  const burgerClose = document.querySelector('#mobile_close');
+  const headerMobile = document.querySelector('.header__mobile');
+  const search = document.querySelector('.header__search');
+  const searchClose = document.querySelector('#search_close');
+  const searching = document.querySelector('.header__search-form');
+
+  burger.addEventListener('click', () => {
+    headerMobile.classList.add('header__mobile-active');
+  })
+  burgerClose.addEventListener('click', () => {
+    headerMobile.classList.remove('header__mobile-active');
+  })
+  search.addEventListener('click', () => {
+    searching.classList.add('header__search-form--active');
+  })
+  searchClose.addEventListener('click', (e) => {
+    e.preventDefault();
+    searching.classList.remove('header__search-form--active');
+  })
   // Функция ymaps.ready() будет вызвана, когда
     // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
     ymaps.ready(init);
@@ -52,5 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
       myMap.controls.remove('geolocationControl');
     }
 
-
+    if ($('#checkbox').prop('checked')) {
+      myMap.container.fitToViewport();
+  }
 })

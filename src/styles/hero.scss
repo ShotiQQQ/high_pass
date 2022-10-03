@@ -15,6 +15,15 @@
     @media (max-width: 768px) {
       column-gap: 30px;
     }
+    @media (max-width: 570px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(auto-fill, 2, 1fr);
+      column-gap: 0;
+      padding-top: 30px;
+    }
+    @media (max-width: 320px) {
+      padding-bottom: 47px;
+    }
   }
 
   &__left {
@@ -32,6 +41,12 @@
       background-image: url("images/photoset-1024.jpg");
       padding: 30px;
     }
+    @media (max-width: 570px) {
+      margin-bottom: 34px;
+    }
+    @media (max-width: 320px) {
+      padding-top: 236px;
+    }
   }
 
   &__name {
@@ -45,6 +60,13 @@
     }
     @media (max-width: 768px) {
       margin-bottom: 14px;
+    }
+    @media (max-width: 570px) {
+      font-size: 14px;
+      line-height: 16px;
+    }
+    @media (max-width: 320px) {
+      margin-bottom: 8px;
     }
   }
 
@@ -63,6 +85,13 @@
     @media (max-width: 768px) {
       line-height: 31px;
     }
+    @media (max-width: 570px) {
+      font-size: 24px;
+      line-height: 26px;
+    }
+    @media (max-width: 320px) {
+      margin-bottom: 14px;
+    }
   }
 
   &__subtitle {
@@ -78,6 +107,10 @@
       margin-bottom: 17px;
       font-size: 22px;
       line-height: 23px;
+    }
+    @media (max-width: 320px) {
+      font-size: 18px;
+      line-height: 19px;
     }
   }
 
@@ -99,7 +132,7 @@
   }
 
   .tag {
-    @include absolute(15px, 16px)
+    @include absolute(15px, 16px);
   }
 
   &__girls {
@@ -109,6 +142,9 @@
   &__imgs {
     img {
       display: block;
+      @media (max-width: 570px) {
+        width: 100%;
+      }
     }
     &-girl1 {
       grid-column-start: 1;

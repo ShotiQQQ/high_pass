@@ -31,6 +31,13 @@
   font-size: 14px;
   line-height: 16px;
   @extend %roboto;
+  @media (max-width: 570px) {
+    top: 5px;
+    right: 5px;
+    font-size: 12px;
+    line-height: 14px;
+    padding: 5px 14px;
+  }
 }
 
 @mixin button($background, $border, $padding) {
@@ -42,4 +49,11 @@
   color: $white;
   border: $border;
   @extend %roboto;
+  @media (max-width: 570px) {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  @media (max-width: 320px) {
+    padding: 12px 22px;
+  }
 }

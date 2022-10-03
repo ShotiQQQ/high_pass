@@ -8,6 +8,9 @@
     @media (max-width: 1024px) {
       padding-bottom: 76px;
     }
+    @media (max-width: 320px) {
+      padding-top: 49px;
+    }
   }
   &__content {
     display: grid;
@@ -34,13 +37,30 @@
     @media (max-width: 768px) {
       grid-template-columns: repeat(6, 1fr);
       grid-template-rows: repeat(4, 1fr);
-      row-gap: 24px;
+      row-gap: 31px;
       grid-template-areas:
       "first first second second third third"
       "fourth fourth fourth fourth fourth fourth"
       "six six six seven seven seven"
       "fifth fifth fifth fifth fifth fifth"
     ;
+    }
+    @media (max-width: 460px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 293px repeat(2, 278px) 422px repeat(2, 300px) 422px;
+      row-gap: 31px;
+      grid-template-areas:
+      "first first"
+      "second second"
+      "third third"
+      "fourth fourth"
+      "six six"
+      "seven seven"
+      "fifth fifth"
+    ;
+    }
+    @media (max-width: 320px) {
+      row-gap: 25px;
     }
   }
   &__card--1 {
@@ -70,6 +90,11 @@
     line-height: 31px;
     color: $black;
     margin-bottom: 12px;
+    @media (max-width: 320px) {
+      font-size: 18px;
+      line-height: 23px;
+      margin-bottom: 15px;
+    }
   }
   &__card {
     color: $white;
@@ -77,6 +102,11 @@
     font-size: 14px;
     line-height: 16px;
     position: relative;
+    img {
+      @media (max-width: 460px) {
+        width: 100%;
+      }
+    }
   }
   &__image {
     img {
@@ -139,6 +169,14 @@
     @media (max-width: 1024px) {
       padding-top: 31px;
     }
+    @media (max-width: 768px) {
+      padding-top: 28px;
+      padding-bottom: 30px;
+    }
+    @media (max-width: 320px) {
+      padding-top: 196px !important;
+      /* justify-content: flex-end; */
+    }
     .projects__date {
       background-image: url("../images/calendar-white.svg");
       background-position: center left;
@@ -151,6 +189,16 @@
       color: $white;
       line-height: 22px;
       max-width: 292px;
+      @media (max-width: 320px) {
+        font-size: 14px;
+        line-height: 18px;
+        margin-bottom: 16px;
+      }
+    }
+    button {
+      @media (max-width: 320px) {
+        margin-top: 0;
+      }
     }
   }
   &__card-background--1 {
@@ -158,6 +206,10 @@
   }
   &__card-background--2 {
     background-image: url("../images/projects_oblivion.jpg");
+    @media (max-width: 768px) {
+      padding-top: 34px;
+      padding-bottom: 23px;
+    }
   }
   &__subtitle {
     max-width: 293px;
